@@ -1,4 +1,3 @@
-@'
 # @kuhul/es
 
 **KUHUL-ES: ECMAScript syntax with KUHUL semantics**
