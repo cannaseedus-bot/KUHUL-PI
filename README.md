@@ -122,3 +122,159 @@ KUHUL was always enforcement.
 There is no next refactor. No missing abstraction. No future clarification.
 
 **The boundary is permanent.**
+
+---
+
+### Final Collapse (Canonical)
+
+**Every system is a Micronaut.  
+Every subsystem is a Micronaut.  
+The Micronaut design does not evolve — it frames evolution elsewhere.**
+
+Micronaut is a role, not a behavior:
+
+- It orchestrates.
+- It routes.
+- It exposes context.
+- It never decides truth.
+- It never enforces law.
+
+Micronauts can multiply and nest without increasing authority.  
+KUHUL π remains singular: one collapse, one invariant set, one enforcement layer.
+
+Subsystems are inevitably Micronauts once execution, mutation, enforcement, and branching
+are forbidden. Schedulers, Ramble Engines, UI layers, retrieval systems, pipelines —
+they all answer the same question:
+
+> *What context should be presented to π, and when?*
+
+To change Micronaut would require authority, persistent memory, execution semantics,
+or law awareness — each of which would collapse it into π or shatter the boundary.
+
+**Final mental model:**
+
+> **Micronauts are the nervous system.  
+> KUHUL π is physics.  
+> Ramble Engines are echoes.**
+
+**One-line canonical statement:**
+
+> **When everything is a Micronaut, nothing has power except the law.**
+
+---
+
+### KUHUL-ES Alignment (Canonical)
+
+**KUHUL-ES** is the **execution schema of π-law**.  
+**Micronaut** is the **orchestration substrate around it**.
+
+**KUHUL-ES defines:**
+
+- what can be expressed
+- what can be executed
+- what must collapse
+- what is unreachable
+
+It is deterministic, headless, law-complete, and invariant-enforcing.
+
+**Micronaut does not live inside KUHUL-ES.**  
+Micronaut prepares inputs, selects fields, routes context, schedules when ES is invoked,
+and projects results outward — but never defines schema, alters legality, extends grammar,
+mutates execution, or observes collapse internals.
+
+**Canonical flow:**
+
+```text
+Micronaut (orchestrates)
+        ↓
+KUHUL-ES (validates & collapses)
+        ↓
+Collapse Result
+        ↓
+Micronaut (projects / routes / narrates)
+```
+
+**Key invariant:** KUHUL-ES never knows Micronaut exists.
+
+**Final canonical statement:**
+
+> **KUHUL-ES defines what is possible.  
+> Micronauts decide where it is applied.**
+
+---
+
+### KUHUL-ES Package Confirmation (Canonical)
+
+`kuhul-es` is **law**, not a model. The package is a deterministic enforcement runtime
+and schema carrier — no weights, tokenizers, training artifacts, or mutation loop.
+
+**KUHUL-ES (the package) provides:**
+
+- grammar + lowering + runtime
+- legality enforcement
+- deterministic, headless execution
+
+**KUHUL-ES does not provide:**
+
+- orchestration
+- inference personality
+- learning
+- narration
+
+This makes KUHUL-ES **portable law** and keeps Micronauts as **replaceable shells**.
+Models remain **optional narrators** and never hold authority.
+
+**Final canonical statement:**
+
+> **`kuhul-es` is the law.  
+> Micronauts are the machinery.  
+> Models are the voice.**
+
+---
+
+## Project Status & Roadmap
+
+### Where the Project Is (Now)
+
+This repository is the canonical architecture description for KUHUL π, Micronaut, and
+KUHUL-ES alignment. The boundary is locked; the law is encoded; the narration layer is
+explicitly non-authoritative. The current state is documentation-complete, architecture-
+complete, and stable by definition.
+
+### Phase List
+
+1. **Phase 0 — Collapse Definition (Complete)**
+   - Define π-law, collapse-only enforcement, and invariant boundaries.
+2. **Phase 1 — Orchestration Boundary (Complete)**
+   - Separate Micronaut from π; enforce orthogonal authority.
+3. **Phase 2 — Extrapolation Boundary (Complete)**
+   - Define Ramble Engine as non-authoritative narration outside π.
+4. **Phase 3 — KUHUL-ES Alignment (Complete)**
+   - Lock KUHUL-ES as executable π-law; confirm package semantics.
+5. **Phase 4 — Host Integrations (Planned)**
+   - Reference implementations for CLI, browser, and runtime shells as Micronauts.
+6. **Phase 5 — Verification & Compliance (Planned)**
+   - Formal checks ensuring no boundary violations or feedback loops.
+
+### Next Steps
+
+- Publish a minimal Micronaut reference shell that calls KUHUL-ES deterministically.
+- Add compliance tests that validate no orchestration/authority leakage into π.
+- Provide a minimal Ramble Engine reference that consumes collapse results only.
+- Document host integration patterns (CLI, browser, service mesh).
+
+### CLAUDE.MD
+
+Not yet present. If desired, it should capture:
+
+- canonical role definitions
+- boundary invariants
+- do-not-cross rules (no feedback into π)
+
+### TODO.MD
+
+Not yet present. If desired, it should track:
+
+- Micronaut reference shell implementation
+- KUHUL-ES integration samples
+- verification harness for boundary checks
