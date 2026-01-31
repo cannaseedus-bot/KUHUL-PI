@@ -278,3 +278,142 @@ Not yet present. If desired, it should track:
 - Micronaut reference shell implementation
 - KUHUL-ES integration samples
 - verification harness for boundary checks
+
+---
+
+## Micronaut Registry — Canonical Blueprint v1.0
+
+```json
+{
+  "micronaut_registry": {
+    "version": "1.0.0",
+    "status": "canonical",
+    "law": "micronauts_orchestrate_only",
+    "authority": "none",
+    "mutation": "forbidden",
+    "enforcement": "kuhul-es"
+  },
+
+  "core_micronauts": {
+    "HostMicronaut": "bridges host environment to system",
+    "ContextMicronaut": "selects contextual framing",
+    "FieldMicronaut": "selects which fields are exposed",
+    "FlowMicronaut": "orders perception streams",
+    "BoundaryMicronaut": "enforces domain separation",
+    "PolicyMicronaut": "applies projection constraints",
+    "ProjectionMicronaut": "maps collapse to UI/output",
+    "ReturnMicronaut": "routes results back to host"
+  },
+
+  "application_micronauts": {
+    "AppMicronaut": "orchestrates application-level context",
+    "StateMicronaut": "projects external state without ownership",
+    "RouteMicronaut": "selects navigation context",
+    "PermissionMicronaut": "exposes allowed surfaces only",
+    "ConfigMicronaut": "loads configuration as read-only context",
+    "ThemeMicronaut": "projects aesthetic parameters",
+    "LocaleMicronaut": "applies language and regional framing"
+  },
+
+  "ui_micronauts": {
+    "UIMicronaut": "selects UI modality",
+    "LayoutMicronaut": "projects spatial arrangement",
+    "InputMicronaut": "routes user input as field data",
+    "GestureMicronaut": "projects interaction signals",
+    "AnimationMicronaut": "projects motion without logic",
+    "ViewportMicronaut": "defines visible surface",
+    "AccessibilityMicronaut": "projects accessibility adaptations"
+  },
+
+  "game_micronauts": {
+    "GameMicronaut": "orchestrates game context",
+    "WorldMicronaut": "selects world state projection",
+    "EntityMicronaut": "projects entities as fields",
+    "PhysicsMicronaut": "projects physics parameters",
+    "CollisionMicronaut": "projects collision context",
+    "CameraMicronaut": "controls viewpoint framing",
+    "InputMapMicronaut": "maps controls to fields",
+    "HUDMicronaut": "projects heads-up display"
+  },
+
+  "rendering_micronauts": {
+    "RenderMicronaut": "selects rendering backend",
+    "CanvasMicronaut": "projects raster surfaces",
+    "SVGMicronaut": "projects geometric surfaces",
+    "WebGLMicronaut": "projects GPU surfaces",
+    "ShaderMicronaut": "projects shading parameters",
+    "TextureMicronaut": "projects texture fields",
+    "FrameMicronaut": "controls frame presentation"
+  },
+
+  "data_micronauts": {
+    "DataSourceMicronaut": "selects data origin",
+    "FetchMicronaut": "orchestrates data retrieval",
+    "CacheMicronaut": "projects cached context",
+    "StreamMicronaut": "projects streaming data",
+    "SyncMicronaut": "coordinates data timing",
+    "TransformMicronaut": "projects data reshaping",
+    "SchemaMicronaut": "projects schema context"
+  },
+
+  "ai_micronauts": {
+    "InferenceMicronaut": "orchestrates inference context",
+    "ModelMicronaut": "selects model surface",
+    "TokenizerMicronaut": "projects tokenization context",
+    "PromptMicronaut": "frames input prompts",
+    "RambleMicronaut": "orchestrates extrapolative narration",
+    "PersonaMicronaut": "projects personality framing",
+    "MemoryMicronaut": "projects retrieval context"
+  },
+
+  "system_micronauts": {
+    "CLIMicronaut": "orchestrates command-line context",
+    "ServerMicronaut": "orchestrates server runtime context",
+    "WorkerMicronaut": "orchestrates background tasks",
+    "SchedulerMicronaut": "orders time-based exposure",
+    "ThreadMicronaut": "projects concurrency framing",
+    "ProcessMicronaut": "projects process-level context",
+    "SignalMicronaut": "routes system signals"
+  },
+
+  "network_micronauts": {
+    "NetworkMicronaut": "orchestrates network context",
+    "APIMicronaut": "projects API surface",
+    "WebSocketMicronaut": "projects realtime channels",
+    "ProtocolMicronaut": "selects protocol framing",
+    "SecurityMicronaut": "projects security constraints",
+    "AuthMicronaut": "projects authentication context"
+  },
+
+  "storage_micronauts": {
+    "StorageMicronaut": "selects storage backend",
+    "FileMicronaut": "projects filesystem context",
+    "DBMicronaut": "projects database context",
+    "IndexMicronaut": "projects indexing context",
+    "BackupMicronaut": "projects backup framing",
+    "SnapshotMicronaut": "projects snapshot views"
+  },
+
+  "debug_micronauts": {
+    "DebugMicronaut": "projects debug context",
+    "LogMicronaut": "routes logging output",
+    "TraceMicronaut": "projects execution trace",
+    "ProfilerMicronaut": "projects performance metrics",
+    "InspectorMicronaut": "projects inspection views"
+  },
+
+  "meta_rules": {
+    "rule_1": "Any new subsystem must be a Micronaut",
+    "rule_2": "Micronauts may not execute or enforce",
+    "rule_3": "Micronauts may be nested freely",
+    "rule_4": "Micronauts may be removed without breaking law",
+    "rule_5": "KUHUL-ES is the sole enforcement authority"
+  }
+}
+```
+
+**Final lock statement:**
+
+> **Micronauts are the only building blocks.  
+> KUHUL-ES is the only law.  
+> Everything else is projection.**
