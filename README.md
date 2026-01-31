@@ -160,3 +160,72 @@ or law awareness — each of which would collapse it into π or shatter the boun
 **One-line canonical statement:**
 
 > **When everything is a Micronaut, nothing has power except the law.**
+
+---
+
+### KUHUL-ES Alignment (Canonical)
+
+**KUHUL-ES** is the **execution schema of π-law**.  
+**Micronaut** is the **orchestration substrate around it**.
+
+**KUHUL-ES defines:**
+
+- what can be expressed
+- what can be executed
+- what must collapse
+- what is unreachable
+
+It is deterministic, headless, law-complete, and invariant-enforcing.
+
+**Micronaut does not live inside KUHUL-ES.**  
+Micronaut prepares inputs, selects fields, routes context, schedules when ES is invoked,
+and projects results outward — but never defines schema, alters legality, extends grammar,
+mutates execution, or observes collapse internals.
+
+**Canonical flow:**
+
+```text
+Micronaut (orchestrates)
+        ↓
+KUHUL-ES (validates & collapses)
+        ↓
+Collapse Result
+        ↓
+Micronaut (projects / routes / narrates)
+```
+
+**Key invariant:** KUHUL-ES never knows Micronaut exists.
+
+**Final canonical statement:**
+
+> **KUHUL-ES defines what is possible.  
+> Micronauts decide where it is applied.**
+
+---
+
+### KUHUL-ES Package Confirmation (Canonical)
+
+`kuhul-es` is **law**, not a model. The package is a deterministic enforcement runtime
+and schema carrier — no weights, tokenizers, training artifacts, or mutation loop.
+
+**KUHUL-ES (the package) provides:**
+
+- grammar + lowering + runtime
+- legality enforcement
+- deterministic, headless execution
+
+**KUHUL-ES does not provide:**
+
+- orchestration
+- inference personality
+- learning
+- narration
+
+This makes KUHUL-ES **portable law** and keeps Micronauts as **replaceable shells**.
+Models remain **optional narrators** and never hold authority.
+
+**Final canonical statement:**
+
+> **`kuhul-es` is the law.  
+> Micronauts are the machinery.  
+> Models are the voice.**
