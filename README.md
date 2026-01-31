@@ -229,3 +229,52 @@ Models remain **optional narrators** and never hold authority.
 > **`kuhul-es` is the law.  
 > Micronauts are the machinery.  
 > Models are the voice.**
+
+---
+
+## Project Status & Roadmap
+
+### Where the Project Is (Now)
+
+This repository is the canonical architecture description for KUHUL π, Micronaut, and
+KUHUL-ES alignment. The boundary is locked; the law is encoded; the narration layer is
+explicitly non-authoritative. The current state is documentation-complete, architecture-
+complete, and stable by definition.
+
+### Phase List
+
+1. **Phase 0 — Collapse Definition (Complete)**
+   - Define π-law, collapse-only enforcement, and invariant boundaries.
+2. **Phase 1 — Orchestration Boundary (Complete)**
+   - Separate Micronaut from π; enforce orthogonal authority.
+3. **Phase 2 — Extrapolation Boundary (Complete)**
+   - Define Ramble Engine as non-authoritative narration outside π.
+4. **Phase 3 — KUHUL-ES Alignment (Complete)**
+   - Lock KUHUL-ES as executable π-law; confirm package semantics.
+5. **Phase 4 — Host Integrations (Planned)**
+   - Reference implementations for CLI, browser, and runtime shells as Micronauts.
+6. **Phase 5 — Verification & Compliance (Planned)**
+   - Formal checks ensuring no boundary violations or feedback loops.
+
+### Next Steps
+
+- Publish a minimal Micronaut reference shell that calls KUHUL-ES deterministically.
+- Add compliance tests that validate no orchestration/authority leakage into π.
+- Provide a minimal Ramble Engine reference that consumes collapse results only.
+- Document host integration patterns (CLI, browser, service mesh).
+
+### CLAUDE.MD
+
+Not yet present. If desired, it should capture:
+
+- canonical role definitions
+- boundary invariants
+- do-not-cross rules (no feedback into π)
+
+### TODO.MD
+
+Not yet present. If desired, it should track:
+
+- Micronaut reference shell implementation
+- KUHUL-ES integration samples
+- verification harness for boundary checks
