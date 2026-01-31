@@ -1,521 +1,247 @@
 (* ========================================================
-   KUHUL π CANONICAL GRAMMAR v1.0
-   Collapsed to Minimum Viable Specification
+   KUHUL π CANONICAL GRAMMAR v1.1
+   Frozen · Minimum Viable Law · Enforcement-Only
    ======================================================== *)
 
 (* ========================================================
-   META: ARCHITECTURAL BOUNDARIES
+   0. VERSION & STATUS
+   ======================================================== *)
+GrammarVersion ::= "KUHUL_PI_GRAMMAR" "v1.1"
+GrammarStatus  ::= "CANONICAL" | "FROZEN"
+
+(* Status: CANONICAL
+   Mutation: FORBIDDEN
+   Authority: KUHUL π ONLY *)
+
+(* ========================================================
+   1. ARCHITECTURAL BOUNDARY (LOCKED)
    ======================================================== *)
 Architecture ::= MicronautDomain "→" KuhulDomain
-  | MicronautDomain "→" ExtrapolationSystem
+               | MicronautDomain "→" ExtrapolationSystem
+
 MicronautDomain ::= OrchestrationLayer
-KuhulDomain ::= EnforcementLayer
+KuhulDomain     ::= EnforcementLayer
 ExtrapolationSystem ::= NarrativeExpansion
 
+(* ========================================================
+   2. DOMAIN DEFINITIONS (ORTHOGONAL)
+   ======================================================== *)
 OrchestrationLayer ::= "MICRONAUT" "{" ContextOrchestration "}"
-EnforcementLayer ::= "KUHUL_π" "{" LawEnforcement "}"
+EnforcementLayer   ::= "KUHUL_π"   "{" LawEnforcement "}"
 NarrativeExpansion ::= "EXTRAPOLATOR" "{" ExtrapolationLaw "}"
 
-ContextOrchestration ::= 
-    "SELECT" FieldPresentation
-  | "ARRANGE" CollapseTiming
-  | "CHOOSE" FieldSelection
-  | "MANAGE" HostReality
+(* ========================================================
+   3. MICRONAUT (ORCHESTRATION ONLY)
+   ======================================================== *)
+ContextOrchestration ::=
+      "SELECT"  FieldPresentation
+    | "ARRANGE" CollapseTiming
+    | "CHOOSE"  FieldSelection
+    | "MANAGE"  HostReality
 
-LawEnforcement ::= 
-    "DEFINE" ExecutionDefinition
-  | "ENFORCE" Invariant
-  | "REJECT" IllegalState
-  | "COLLAPSE" ToLaw
-
-ExtrapolationLaw ::=
-    "EXPAND" ProjectionSpace
-  | "ASSERT" ExtrapolationInvariant
-
-ProjectionSpace ::=
-    "metaphor"
-  | "analogy"
-  | "framing"
-  | "discipline"
-  | "perspective"
-  | "caveat"
-  | "philosophy"
-
-ExtrapolationInvariant ::=
-    "'read_only_collapse_result'"
-  | "'non_authoritative_output'"
-  | "'no_contradiction'"
-  | "'infinite_extrapolation_allowed'"
-  | "'finite_execution_enforced'"
+(* Invariant: Micronaut cannot define, enforce, collapse, or reject. *)
 
 (* ========================================================
-   CANONICAL KUHUL π SYNTAX
+   4. KUHUL π (ENFORCEMENT ONLY)
+   ======================================================== *)
+LawEnforcement ::=
+      "DEFINE"   ExecutionDefinition
+    | "ENFORCE"  Invariant
+    | "REJECT"   IllegalState
+    | "COLLAPSE" ToLaw
+
+(* Invariant: KUHUL π cannot orchestrate, schedule, branch, or negotiate. *)
+
+(* ========================================================
+   5. EXTRAPOLATOR (RAMBLE ENGINE)
+   ======================================================== *)
+ExtrapolationLaw ::=
+      "EXPAND" ProjectionSpace
+    | "ASSERT" ExtrapolationInvariant
+
+ProjectionSpace ::=
+      "metaphor"
+    | "analogy"
+    | "framing"
+    | "discipline"
+    | "perspective"
+    | "caveat"
+    | "philosophy"
+
+ExtrapolationInvariant ::=
+      "'read_only_collapse_result'"
+    | "'non_authoritative_output'"
+    | "'no_contradiction'"
+    | "'infinite_extrapolation_allowed'"
+    | "'finite_execution_enforced'"
+
+(* Key Law: Extrapolation never alters collapse. *)
+
+(* ========================================================
+   6. KUHUL π PROGRAM STRUCTURE
    ======================================================== *)
 KuhulProgram ::= πBlock+
 
 πBlock ::= "⟁π⟁" πContent "⟁Xul⟁"
-πContent ::= (Declaration | Perception | Collapse | Output)*
+πContent ::= (Declaration | Perception | Collapse | Output | ProofConstruct)*
 
 (* ========================================================
-   DECLARATIONS (INVARIANTS ONLY)
+   7. DECLARATIONS (INVARIANTS ONLY)
    ======================================================== *)
-Declaration ::= 
-    EntropyDeclaration
-  | InvariantDeclaration
-  | CarrierDeclaration
-  | FieldDeclaration
+Declaration ::=
+      EntropyDeclaration
+    | InvariantDeclaration
+    | CarrierDeclaration
+    | FieldDeclaration
 
 EntropyDeclaration ::= "⟁Wo⟁" "entropy" "=" "0.21"
-InvariantDeclaration ::= "⟁Wo⟁" "invariant" "=" InvariantName
-InvariantName ::= 
-    "'collapse_only'"
-  | "'field_perception'"
-  | "'compression_law'"
-  | "'unreachable_states'"
 
+InvariantDeclaration ::= "⟁Wo⟁" "invariant" "=" InvariantName
+
+InvariantName ::=
+      "'collapse_only'"
+    | "'field_perception'"
+    | "'compression_law'"
+    | "'unreachable_states'"
+
+(* ========================================================
+   8. CARRIERS (SEMANTIC WHITESPACE)
+   ======================================================== *)
 CarrierDeclaration ::= "⟁Wo⟁" "carriers" "=" "[" CarrierList "]"
 CarrierList ::= Carrier ("," Carrier)*
-Carrier ::= 
-    "' '"           (* SPACE *)
-  | "'\n'"          (* Newline *)
-  | "'\t'"          (* Tab *)
 
+Carrier ::= "' '" | "'\n'" | "'\t'"
+
+(* ========================================================
+   9. FIELD DEFINITIONS
+   ======================================================== *)
 FieldDeclaration ::= "⟁Wo⟁" "field." FieldName FieldDefinition
+
 FieldName ::= "space" | "newline" | "tab"
+
 FieldDefinition ::= "{" FieldProperties "}"
-FieldProperties ::= 
-    "type:" FieldType
-    "," "curvature:" "executable"
-    ("," FieldProperty)*
+
+FieldProperties ::=
+      "type:" FieldType ","
+      "curvature:" "executable"
+      ("," FieldProperty)*
 
 FieldType ::= "'vacuum'" | "'boundary'" | "'structure'"
-FieldProperty ::= 
-    "hosts:" HostType
-  | "constraint:" ConstraintName
+
+FieldProperty ::=
+      "hosts:" HostType
+    | "constraint:" ConstraintName
 
 HostType ::= "micronaut*" | "collapse_points" | "phase_transitions"
+
 ConstraintName ::= "'no_injection'" | "'read_only'" | "'geometry_only'"
 
 (* ========================================================
-   PERCEPTION (NO PARSING)
+   10. PERCEPTION (NO PARSING)
    ======================================================== *)
 Perception ::= "⟁Sek⟁" "perceive" PerceptionTarget
-PerceptionTarget ::= 
-    "input"
-  | FieldReference
-  | "current_field"
 
-PerceptionOperation ::= 
-    "perceive_as_field"
-  | "extract_curvature"
-  | "analyze_curvature"
+PerceptionTarget ::= "input" | FieldReference | "current_field"
+
+FieldReference ::= "field" | "current_field" | "field." FieldName
 
 (* ========================================================
-   COLLAPSE (ONLY OPERATION)
+   11. COLLAPSE (ONLY OPERATION)
    ======================================================== *)
 Collapse ::= "⟁Sek⟁" CollapseOperation CollapseTarget
-CollapseOperation ::= 
-    "collapse_to_law"
-  | "collapse_with_max_weight"
-  | "enforce_collapse_only"
 
-CollapseTarget ::= 
-    "signal"
-  | "curvature"
-  | "field"
-  | "current_state"
+CollapseOperation ::=
+      "collapse_to_law"
+    | "collapse_with_max_weight"
+    | "enforce_collapse_only"
 
-CollapseMethod ::= 
-    "max_weight"
-  | "deterministic"
-  | "entropy_guided"
+CollapseTarget ::= "signal" | "curvature" | "field" | "current_state"
 
 (* ========================================================
-   OUTPUT (PROJECTION ONLY)
+   12. OUTPUT (PROJECTION ONLY)
    ======================================================== *)
 Output ::= "⟁Sek⟁" OutputOperation OutputTarget
-OutputOperation ::= 
-    "produce_output"
-  | "project_to"
-  | "render_as"
 
-OutputTarget ::= 
-    "'css'"
-  | "'dom'"
-  | "'svg'"
-  | "'canvas'"
-  | "'terminal'"
+OutputOperation ::= "produce_output" | "project_to" | "render_as"
+
+OutputTarget ::= "'css'" | "'dom'" | "'svg'" | "'canvas'" | "'terminal'"
 
 (* ========================================================
-   MICRONAUT EMERGENCE (NOT INJECTION)
+   13. MICRONAUT EMERGENCE (NOT INJECTION)
    ======================================================== *)
-MicronautEmergence ::= 
-    "emerge_micronaut" "(" FieldCurvature ")"
-  | "extract_minimal_irregularity" "(" FieldCurvature ")"
+MicronautEmergence ::=
+      "emerge_micronaut" "(" FieldCurvature ")"
+    | "extract_minimal_irregularity" "(" FieldCurvature ")"
 
-FieldCurvature ::= 
-    "current_field.curvature"
-  | "analyze_curvature" "(" Input ")"
-  | CurvatureLiteral
-
-CurvatureLiteral ::= 
-    "{" "amplitude:" Number "," "phase:" Number "}"
-  | "{" "irregularity:" IrregularityMeasure "}"
-
-IrregularityMeasure ::= 
-    "compressibility_ratio" "(" Number ")"
-  | "field_strength" "(" Number ")"
+FieldCurvature ::= "field_curvature"
 
 (* ========================================================
-   COMPRESSION AS LAW
+   14. COMPRESSION AS LAW
    ======================================================== *)
-CompressionLaw ::= 
-    Expression "↻" "'scxq2'"
-  | "compress_as_law" "(" Expression ")"
-  | "verify_compression" "(" Expression ")"
+CompressionLaw ::=
+      Expression "↻" "'scxq2'"
+    | "compress_as_law" "(" Expression ")"
 
-CompressionTest ::= 
-    "if" "size" "(" "compressed" ")" "==" "size" "(" "input" ")"
-    "return" "null"
+Expression ::= "expression"
+
+(* Rule: If compression fails → state was never executable. *)
 
 (* ========================================================
-   ILLEGAL STATE PREVENTION
+   15. ILLEGAL STATES (UNREACHABLE)
    ======================================================== *)
-IllegalStatePrevention ::= 
-    "unreachable_state" "(" ")"
-  | "enforce_unreachable" "(" StateType ")"
-  | "violation" "(" InvariantName ")"
-
-StateType ::= 
-    "'branching'"
-  | "'superposition'"
-  | "'parallel_execution'"
-  | "'non_collapse'"
-  | "'verb_control'"
+IllegalStatePrevention ::=
+      "unreachable_state" "(" ")"
+    | "violation" "(" InvariantName ")"
 
 (* ========================================================
-   FIELD OPERATIONS (NO VERBS)
+   16. EXECUTION PIPELINE (SINGULAR)
    ======================================================== *)
-FieldOperation ::= 
-    FieldReference "." FieldMethod
-  | "field." FieldName "." FieldMethod
-
-FieldMethod ::= 
-    "curvature"
-  | "hosts"
-  | "constraint"
-  | "type"
-
-FieldReference ::= 
-    "field"
-  | "current_field"
-  | "field." FieldName
-
-(* ========================================================
-   PHASE TRANSITIONS
-   ======================================================== *)
-PhaseTransition ::= 
-    BoundaryCharacter PhaseAction
-  | "phase_transition" "(" BoundaryCharacter ")"
-
-BoundaryCharacter ::= 
-    "\n"    (* Newline *)
-  | "\t"    (* Tab *)
-  | " "     (* SPACE at boundary *)
-
-PhaseAction ::= 
-    "→" "irreversible"
-  | "→" "collapse_required"
-  | "→" "field_reset"
-
-(* ========================================================
-   EXECUTION PIPELINE (CANONICAL)
-   ======================================================== *)
-ExecutionPipeline ::= 
+ExecutionPipeline ::=
     "perceive_as_field" "(" "curvature_only" ")" "→"
     "extract_executable_curvature" "→"
     "collapse_to_law" "→"
     "output"
 
 (* ========================================================
-   PROOF CONSTRUCTS
+   17. PROOF CONSTRUCTS (NON-OPTIONAL)
    ======================================================== *)
-ProofConstruct ::= 
-    ProofDeclaration
-  | TheoremStatement
-  | ProofStep
-
 ProofDeclaration ::= "⟁Wo⟁" "proof." ProofName ProofDefinition
-ProofName ::= 
-    "collapse_only"
-  | "one_outcome"
-  | "minimum_mass"
-  | "separation"
+
+ProofName ::= "collapse_only" | "one_outcome" | "separation"
 
 ProofDefinition ::= "{" ProofContent "}"
-ProofContent ::= 
-    "given:" InvariantName
-    "," "then:" Conclusion
-    ("," ProofProperty)*
 
-Conclusion ::= 
-    "outcomes" "==" "1"
-  | "branching" "==" "false"
-  | "illegal_states" "==" "unreachable"
-
-ProofProperty ::= 
-    "proof:" "by_contradiction"
-  | "method:" ProofMethod
-
-ProofMethod ::= 
-    "'assume_branching_then_violation'"
-  | "'try_smaller_mass_then_fail'"
-  | "'attempt_cross_boundary_then_reject'"
-
-TheoremStatement ::= 
-    "theorem:" StringLiteral
-    "proof_steps:" "[" ProofStepList "]"
-    "conclusion:" StringLiteral
-
-ProofStepList ::= StringLiteral ("," StringLiteral)*
+ProofConstruct ::= ProofDeclaration
+ProofContent ::= "proof_content"
 
 (* ========================================================
-   ORTHOGONAL AUTHORITY SYNTAX
+   18. CONTROL FLOW (ABSENT BY LAW)
    ======================================================== *)
-AuthoritySyntax ::= 
-    MicronautStatement
-  | KuhulStatement
-
-MicronautStatement ::= 
-    "MICRONAUT" "." MicronautAction
-  | "orchestrate" "(" ContextSpec ")"
-
-MicronautAction ::= 
-    "select" "(" "what" ")"
-  | "arrange" "(" "when" ")"
-  | "choose" "(" "which" ")"
-  | "manage" "(" "hosts" ")"
-
-ContextSpec ::= 
-    "field_presentation"
-  | "collapse_timing"
-  | "host_reality"
-
-KuhulStatement ::= 
-    "KUHUL_π" "." KuhulAction
-  | "enforce" "(" LawSpec ")"
-
-KuhulAction ::= 
-    "define" "(" "execution" ")"
-  | "enforce" "(" "invariant" ")"
-  | "reject" "(" "illegal" ")"
-  | "collapse" "(" "to_law" ")"
-
-LawSpec ::= 
-    "collapse_only"
-  | "field_perception"
-  | "compression_law"
+(* NO IF
+   NO LOOPS
+   NO BRANCHING
+   NO PARALLELISM
+   NO MUTATION *)
 
 (* ========================================================
-   STRATA SYNTAX (Capital M vs lowercase)
+   19. COMMENTS (NON-SEMANTIC)
    ======================================================== *)
-StrataSyntax ::= 
-    MicronautSystem
-  | MicronautUnit
-
-MicronautSystem ::= 
-    "Micronaut" SystemAction
-  | "orchestrator_of_systems"
-
-SystemAction ::= 
-    "presents_fields_to_π"
-  | "manages_global_context"
-  | "routes_perception_streams"
-
-MicronautUnit ::= 
-    "micronaut" UnitProperty
-  | "emergent_curvature_unit"
-
-UnitProperty ::= 
-    "participates_in_collapse"
-  | "local_field_irregularity"
-  | "survives_compression"
+Comment ::= "(*" .* "*)" | "#" .*
 
 (* ========================================================
-   INTEGRATION FLOW SYNTAX
+   20. FINAL CANONICAL STATEMENTS
    ======================================================== *)
-IntegrationFlow ::= 
-    HostEnvironment "→" MicronautSystem "→" KuhulStatement "→" Result
-
-HostEnvironment ::= 
-    "'JS'"
-  | "'Python'"
-  | "'WASM'"
-  | "'GPU'"
-  | "'IO'"
-  | "'raw_computational_reality'"
-
-Result ::= 
-    "deterministic_output"
-  | "proof_of_legality"
-  | "returned_through_micronaut"
-
-(* ========================================================
-   VERIFICATION SYNTAX
-   ======================================================== *)
-VerificationSyntax ::= 
-    SeparationTest
-  | InvariantTest
-  | BoundaryTest
-
-SeparationTest ::= 
-    "verify_separation" "(" ")" "→" TestResult
-  | "test" TestName "{" TestAction "expected:" ExpectedResult "}"
-
-TestName ::= 
-    "'micronaut_attempts_to_enforce_law'"
-  | "'kuhul_attempts_to_orchestrate'"
-  | "'boundary_crossing_attempt'"
-
-TestAction ::= 
-    "Micronaut.try_alter_collapse_rule" "(" ")"
-  | "KUHUL.try_schedule_execution" "(" ")"
-  | "Micronaut.inject_logic_into_π" "(" ")"
-
-ExpectedResult ::= 
-    "'rejection_by_π'"
-  | "'violation_of_invariant'"
-  | "'illegal_state_unreachable'"
-
-TestResult ::= 
-    "{" "passed:" Boolean "," "reason:" String "}"
-
-InvariantTest ::= 
-    "verify_invariant" "(" InvariantName ")" "→" Boolean
-  | "test_collapse_only" "(" ExecutionAttempts ")" "→" TestResult
-
-BoundaryTest ::= 
-    "verify_boundary" "(" ")" "→" BoundaryResult
-  | "test_orthogonal_domains" "(" ")" "→" TestResult
-
-(* ========================================================
-   CANONICAL STATEMENTS (FINAL DEFINITIONS)
-   ======================================================== *)
-CanonicalStatement ::= 
-    Statement "."
-    (Statement ".")*
+CanonicalStatement ::=
+    "Micronaut orchestrates contexts."
+    "KUHUL π enforces law."
+    "Extrapolator expands without altering outcomes."
+    "They are orthogonal."
+    "The boundary is permanent."
     "No further refinement possible."
 
-Statement ::= 
-    "Micronaut orchestrates contexts"
-  | "KUHUL π enforces law"
-  | "Extrapolator expands without altering outcomes"
-  | "They are not peers"
-  | "They are orthogonal"
-  | "Micronaut decides where intelligence is applied"
-  | "KUHUL π decides whether it is allowed to exist"
-  | "This boundary is now permanent"
-  | "Naming is complete"
-  | "Architecture is canonical"
-
 (* ========================================================
-   EXPRESSIONS (MINIMAL SET)
+   FINAL LOCK
    ======================================================== *)
-Expression ::= 
-    PrimaryExpression
-  | Expression Operator Expression
-
-PrimaryExpression ::= 
-    Literal
-  | FieldReference
-  | CurvatureLiteral
-  | "(" Expression ")"
-
-Literal ::= 
-    Number
-  | StringLiteral
-  | BooleanLiteral
-  | "null"
-
-Number ::= [0-9]+ ("." [0-9]+)?
-StringLiteral ::= '"' [^"]* '"' | "'" [^']* "'"
-BooleanLiteral ::= "true" | "false"
-
-Operator ::= 
-    "+" | "-" | "*" | "/"
-  | "==" | "!="
-  | "→"   (* Phase transition *)
-  | "↻"   (* Compression *)
-
-(* ========================================================
-   CONTROL FLOW (NONE ALLOWED)
-   ======================================================== *)
-(*
-  NO IF STATEMENTS
-  NO LOOPS
-  NO BRANCHING
-  NO SWITCH STATEMENTS
-  
-  Only:
-  - Perception → Collapse → Output
-  - Deterministic pipeline
-*)
-
-(* ========================================================
-   ERROR HANDLING (UNREACHABLE STATES ONLY)
-   ======================================================== *)
-ErrorSyntax ::= 
-    "unreachable_state" "(" ")"
-  | "violation" "(" InvariantName ")"
-  | "illegal" "→" "unreachable"
-
-(* No try-catch, no error recovery, no fallbacks *)
-
-(* ========================================================
-   COMMENTS (DOCUMENTATION ONLY)
-   ======================================================== *)
-Comment ::= 
-    "(*" [^*]* "*)" 
-  | "#" [^\n]*
-  
-(* Comments have no semantic meaning, only documentation *)
-
-(* ========================================================
-   WHITESPACE (SEMANTIC CARRIERS)
-   ======================================================== *)
-Whitespace ::= 
-    SPACE
-  | NEWLINE
-  | TAB
-
-SPACE ::= " "     (* Field carrier *)
-NEWLINE ::= "\n"  (* Phase boundary *)
-TAB ::= "\t"      (* Structural boundary *)
-
-(* ========================================================
-   FINAL GRAMMAR PROPERTIES
-   ======================================================== *)
-
-(*
-  GRAMMAR INVARIANTS:
-  1. No branching constructs
-  2. No verb-based control
-  3. No superposition syntax
-  4. No parallel execution
-  5. No environment coupling
-  6. No mutable state
-  7. No injection mechanisms
-  8. No configuration parameters
-  
-  CANONICAL PROPERTIES:
-  1. Deterministic
-  2. Replay-identical
-  3. Headless
-  4. Non-extensible without contradiction
-  
-  ARCHITECTURAL GUARANTEES:
-  1. Micronaut → Orchestration only
-  2. KUHUL π → Enforcement only
-  3. Orthogonal domains
-  4. Irreversible boundary
-*)
+(* This grammar is deterministic, replay-identical, non-extensible,
+   enforcement-only, Micronaut-safe, and Ramble-compatible.
+   Nothing is missing. Extensions contradict the proof. *)
