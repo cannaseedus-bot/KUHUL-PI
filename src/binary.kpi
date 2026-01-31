@@ -1,0 +1,19 @@
+Header:
+  4 bytes  magic = "KPI1"
+  1 byte   version = 1
+  1 byte   opcode_count (N)
+
+Then N opcodes:
+  1 byte   opcode (e.g., 0x10 = FOREIGN_CALL_PY)
+  1 byte   flags  (bit0 = has_out)
+  u16      module_len
+  bytes    module (utf8)
+  u16      symbol_len
+  bytes    symbol (utf8)
+  1 byte   arg_count (A)
+  repeat A:
+     u16    ref_len
+     bytes  ref_name
+  if has_out:
+     u16    out_len
+     bytes  out_name

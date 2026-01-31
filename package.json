@@ -1,0 +1,25 @@
+{
+  "name": "kuhul-es",
+  "version": "1.0.18",
+  "main": "src/index.js",
+  "bin": {
+    "kuhul-es": "bin/kuhul-es.js"
+  },
+  "scripts": {
+    "doctor": "node -e \"require('fs').accessSync('bin/kuhul-es.js'); console.log('CLI OK')\""
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "runtime/",
+    "compiler/",
+    "README.md",
+    "license.md"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  }
+}

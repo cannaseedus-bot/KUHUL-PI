@@ -1,0 +1,8 @@
+# 1) TS emits .asx
+node dist/emit_asx.js
+
+# 2) Lower .asx -> .kpi
+node dist/asx_to_kpi.js
+
+# 3) Python executes KPI
+python python/kuhul_python_adapter.py
