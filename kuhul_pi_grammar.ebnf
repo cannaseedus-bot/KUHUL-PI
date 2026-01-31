@@ -7,11 +7,14 @@
    META: ARCHITECTURAL BOUNDARIES
    ======================================================== *)
 Architecture ::= MicronautDomain "→" KuhulDomain
+  | MicronautDomain "→" ExtrapolationSystem
 MicronautDomain ::= OrchestrationLayer
 KuhulDomain ::= EnforcementLayer
+ExtrapolationSystem ::= NarrativeExpansion
 
 OrchestrationLayer ::= "MICRONAUT" "{" ContextOrchestration "}"
 EnforcementLayer ::= "KUHUL_π" "{" LawEnforcement "}"
+NarrativeExpansion ::= "EXTRAPOLATOR" "{" ExtrapolationLaw "}"
 
 ContextOrchestration ::= 
     "SELECT" FieldPresentation
@@ -24,6 +27,26 @@ LawEnforcement ::=
   | "ENFORCE" Invariant
   | "REJECT" IllegalState
   | "COLLAPSE" ToLaw
+
+ExtrapolationLaw ::=
+    "EXPAND" ProjectionSpace
+  | "ASSERT" ExtrapolationInvariant
+
+ProjectionSpace ::=
+    "metaphor"
+  | "analogy"
+  | "framing"
+  | "discipline"
+  | "perspective"
+  | "caveat"
+  | "philosophy"
+
+ExtrapolationInvariant ::=
+    "'read_only_collapse_result'"
+  | "'non_authoritative_output'"
+  | "'no_contradiction'"
+  | "'infinite_extrapolation_allowed'"
+  | "'finite_execution_enforced'"
 
 (* ========================================================
    CANONICAL KUHUL π SYNTAX
@@ -386,6 +409,7 @@ CanonicalStatement ::=
 Statement ::= 
     "Micronaut orchestrates contexts"
   | "KUHUL π enforces law"
+  | "Extrapolator expands without altering outcomes"
   | "They are not peers"
   | "They are orthogonal"
   | "Micronaut decides where intelligence is applied"
