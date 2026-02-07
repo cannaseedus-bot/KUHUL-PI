@@ -1,0 +1,22 @@
+name = "micronaut"
+object = "SCO/1"
+orchestrator = "PowerShell"
+state = "INIT"
+root = "."
+
+[io]
+chat = "io/chat.txt"
+stream = "io/stream.txt"
+
+[rest]
+post_chat = "POST /chat -> append io/chat.txt"
+get_stream = "GET /stream -> read io/stream.txt"
+get_status = "GET /status -> read object state"
+post_snapshot = "POST /snapshot -> rotate io/snapshot"
+
+[contract]
+init = "INIT"
+ready = "READY"
+running = "RUNNING"
+idle = "IDLE"
+halt = "HALT"

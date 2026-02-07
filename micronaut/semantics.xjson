@@ -1,0 +1,14 @@
+{
+  "$schema": "kuhul-tsg",
+  "version": "1.0",
+  "rules": {
+    "chat_record": {
+      "immutable": true,
+      "append_only": true
+    },
+    "stream_record": {
+      "append_only": true,
+      "projection_only": true
+    }
+  }
+}
