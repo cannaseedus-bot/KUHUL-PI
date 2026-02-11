@@ -1,0 +1,84 @@
+(* ========================================================
+   C@@L ATOMIC BLOCK GRAMMAR v1.0
+   Source: extracted from sw.khl usage patterns
+   Scope: C@@L/COOL control primitives + block syntax
+   Status: Canonical reference for current repo syntax
+   ======================================================== *)
+
+GrammarVersion ::= "COOL_ATOMIC_GRAMMAR" "v1.0"
+
+Program ::= Header? Section*
+
+Header ::= KernelBanner
+KernelBanner ::= "⟁" "KERNEL_HYPER_LANGUAGE_v1" "⟁"
+
+Section ::= MetaBlock
+          | AtomicVectorsBlock
+          | AtomicVariablesBlock
+          | AtomicBlock
+          | TaggedBlock
+          | Comment
+
+(* ------------------- Core block forms ------------------- *)
+MetaBlock ::= "[Pop" Identifier "]" Statement* "[Xul]"
+AtomicBlock ::= "[Pop" Identifier "]" Statement* "[Xul]"
+TaggedBlock ::= "⟁" Identifier "⟁" Statement* "⟁" "Xul" "⟁"
+
+Statement ::= Assignment
+            | PipeStatement
+            | ControlStatement
+            | Invocation
+            | Comment
+
+Assignment ::= Symbol "=" Value
+
+PipeStatement ::= "[Wo" Expr "]" "→" "[Ch'en" Identifier "]"
+                | "[Wo" Expr "]" "→" "[Sek" Identifier "]"
+                | "[Wo" Expr "]" "→" "[Yax" Expr "]" "→" "[Sek" Identifier "]"
+                | "[Yax" Expr Expr "]" "→" "[Sek" Identifier "]"
+
+Invocation ::= "[Sek" Identifier "]"
+
+(* ------------------- Control primitives ------------------- *)
+ControlStatement ::= IfThenElse
+                   | Loop
+                   | Dispatch
+                   | Microagent
+
+IfThenElse ::= "[@if" Condition "]" "→" "[@then" Statement* "]" ("→" "[@else" Statement* "]")?
+
+Loop ::= "[@loop" LoopExpr "]" "→" "[" Statement* "]"
+LoopExpr ::= "@for" Identifier "in" Expr
+
+Dispatch ::= "[@dispatch" Expr "]" "→" "[@case" Identifier "]" ("→" "[@case" Identifier "]")* ("→" "[@default]")?
+
+Microagent ::= "[@agent.spawn]" "→" "[@agent.assign_task]" "→" "[@agent.execute]" "→" "[@agent.merge_results]"
+
+(* ------------------- Data forms ------------------- *)
+Value ::= String
+        | Number
+        | Boolean
+        | Array
+        | Object
+        | Symbol
+
+Array ::= "[" (Value ("," Value)*)? "]"
+Object ::= "{" (Pair ("," Pair)*)? "}"
+Pair ::= String ":" Value
+
+Expr ::= String | Number | Symbol | Expr "+" Expr
+Condition ::= Expr Comparator Expr
+Comparator ::= "==" | "!=" | ">" | "<" | ">=" | "<="
+
+Symbol ::= "@" Identifier | Identifier
+Identifier ::= Letter (Letter | Digit | "_" | "." | "-")*
+String ::= '"' Character* '"'
+Number ::= Digit+ ("." Digit+)?
+Boolean ::= "true" | "false"
+
+Comment ::= "/*" .* "*/" | "//" .*
+
+Letter ::= "A"|"B"|"C"|"D"|"E"|"F"|"G"|"H"|"I"|"J"|"K"|"L"|"M"|"N"|"O"|"P"|"Q"|"R"|"S"|"T"|"U"|"V"|"W"|"X"|"Y"|"Z"
+         | "a"|"b"|"c"|"d"|"e"|"f"|"g"|"h"|"i"|"j"|"k"|"l"|"m"|"n"|"o"|"p"|"q"|"r"|"s"|"t"|"u"|"v"|"w"|"x"|"y"|"z"
+Digit ::= "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"
+Character ::= ? any non-quote character ?
